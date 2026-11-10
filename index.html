@@ -155,33 +155,79 @@ footer{background:var(--blue-2);color:rgba(255,255,255,.7);padding:60px 0 36px;f
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
 
+/* ===== TABLET / CELULAR ===== */
 @media (max-width:960px){
+  html{-webkit-tap-highlight-color:transparent}
+  .nav .wrap{height:64px}
   .nav ul,.nav .btn{display:none}
-  .menu-btn{display:block}
-  .nav.open ul{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:0;background:var(--blue-2);padding:8px 24px 24px}
-  .nav.open ul a{display:block;padding:16px 0;font-size:20px;border-bottom:1px solid rgba(255,255,255,.08)}
-  .hero{display:flex;flex-direction:column}
-  .hero-text{padding:40px 0 48px;max-width:none}
-  .hero .photo{position:relative;top:auto;bottom:auto;order:-1;width:100%;height:440px}
-  .hero .photo{-webkit-mask-image:none;mask-image:none}
-  .hero .photo img{-webkit-mask-image:linear-gradient(0deg,transparent 0%,rgba(0,0,0,.6) 18%,#000 45%);mask-image:linear-gradient(0deg,transparent 0%,rgba(0,0,0,.6) 18%,#000 45%)}
-  .hero .flag{order:3}
-  .fila-grid,.quem-grid,.part-grid{grid-template-columns:1fr;gap:44px}
-  .pillar{grid-template-columns:1fr;gap:16px}
-  .pillar .n{font-size:72px}
-  .steps{grid-template-columns:1fr 1fr;gap:30px 24px}
-  section{padding:80px 0}
+  .menu-btn{display:grid;place-items:center;width:44px;height:44px;margin-right:-8px}
+  .menu-btn i{position:relative;display:block;width:24px;height:2px;background:#fff;transition:background .2s}
+  .menu-btn i::before,.menu-btn i::after{content:"";position:absolute;left:0;width:24px;height:2px;background:#fff;transition:transform .25s ease}
+  .menu-btn i::before{top:-7px}.menu-btn i::after{top:7px}
+  .nav.open .menu-btn i{background:transparent}
+  .nav.open .menu-btn i::before{transform:translateY(7px) rotate(45deg)}
+  .nav.open .menu-btn i::after{transform:translateY(-7px) rotate(-45deg)}
+  .nav.open ul{display:flex;position:fixed;top:64px;left:0;right:0;bottom:0;flex-direction:column;gap:0;background:var(--blue-2);padding:24px 24px calc(24px + env(safe-area-inset-bottom))}
+  .nav.open ul a{display:block;padding:20px 0;font-size:30px;font-weight:800;color:#fff;border-bottom:1px solid rgba(255,255,255,.1)}
+  .nav.open ul li:last-child a{color:var(--yellow)}
+
+  /* topo em tela cheia, nome sobre a foto */
+  .hero{padding-top:64px;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end}
+  .hero::after{display:none}
+  .hero .photo{top:64px;bottom:6px;left:0;right:0;width:100%;-webkit-mask-image:none;mask-image:none}
+  .hero .photo img{object-position:50% 8%;-webkit-mask-image:none;mask-image:none}
+  .hero .photo::after{background:linear-gradient(0deg,var(--blue) 0%,var(--blue) 30%,rgba(10,44,110,.75) 48%,rgba(10,44,110,0) 70%);mix-blend-mode:normal}
+  .hero-grid{z-index:2}
+  .hero-text{padding:0 0 36px;max-width:none}
+  .where .sep{display:none}
+  .where{gap:8px;margin-bottom:16px}
+  .where span{padding:7px 10px;border-radius:3px;background:rgba(255,255,255,.12);backdrop-filter:blur(6px);color:#fff;font-size:13px;letter-spacing:.1em}
+  .where span.pl{background:var(--yellow);color:var(--blue-2);padding:7px 10px;height:auto;min-width:0;font-size:13px}
+  .hero .slogan{margin:16px 0 10px}
+  .hero-ctas{margin-top:24px}
+  .hero .flag{position:relative;z-index:2}
+
+  section{padding:72px 0}
+  .head{margin-bottom:36px}
+  .fila-grid,.quem-grid,.part-grid{grid-template-columns:1fr;gap:40px}
+  .pillar{grid-template-columns:auto 1fr;gap:6px 18px;padding:34px 0}
+  .pillar .n{font-size:64px;grid-row:span 1}
+  .pillar > div:nth-child(2){align-self:center}
+  .pillar .sub{grid-column:1/-1}
+  .pillar .acts{grid-column:1/-1;margin-top:14px;padding:20px;background:rgba(255,255,255,.06);border-left:3px solid var(--yellow)}
+  .steps{grid-template-columns:1fr 1fr;gap:28px 20px}
 }
 @media (max-width:560px){
-  .wrap{padding:0 16px}
+  .wrap{padding:0 20px}
   body{font-size:17px}
-  .hero h1{font-size:68px}
+  .logo{gap:10px}
   .logo b{font-size:22px}
-  .steps{grid-template-columns:1fr}
-  .row{grid-template-columns:1fr}
-  form{padding:24px}
+  .hero h1{font-size:clamp(60px,19vw,84px)}
+  .hero .slogan{font-size:23px}
+  .hero p.lead{font-size:16.5px}
+  .hero-ctas{display:grid;grid-template-columns:1fr;gap:10px}
+  .hero-ctas .btn{width:100%;padding:17px}
+  .head h2{font-size:clamp(40px,12vw,52px)}
+  .bignum{font-size:140px}
+  .fila h2{font-size:34px}
   .dots{grid-template-columns:repeat(25,1fr);gap:4px}
-  .facts li{flex-direction:column;gap:4px}
+  .quem-fig{margin:0 -20px 32px}
+  .quem-fig figcaption{padding:0 20px}
+  .quote{font-size:30px;padding-left:20px;border-left-width:5px}
+  .quote-by{padding-left:25px}
+  .facts li b{width:104px;font-size:14px}
+  .pillar h3{font-size:38px}
+  .pillar .n{font-size:56px}
+  .steps{gap:24px 16px}
+  .step h3{font-size:26px}
+  .step p{font-size:15.5px}
+  .participe h2{font-size:48px}
+  .row{grid-template-columns:1fr}
+  form{padding:24px 20px;margin:0 -20px;box-shadow:none}
+  .btn-blue{width:100%;padding:18px}
+  .foot{flex-direction:column;align-items:flex-start;gap:22px}
+  .foot .logo b{font-size:30px}
+  footer{padding-bottom:calc(36px + env(safe-area-inset-bottom))}
 }
 </style>
 </head>
@@ -197,14 +243,14 @@ footer{background:var(--blue-2);color:rgba(255,255,255,.7);padding:60px 0 36px;f
       <li><a href="#participe">Fale com o Murilo</a></li>
     </ul>
     <a href="#participe" class="btn btn-yellow">Apoie</a>
-    <button class="menu-btn" aria-label="Abrir menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    <button class="menu-btn" aria-label="Abrir menu" onclick="document.getElementById('nav').classList.toggle('open')"><i></i></button>
   </div>
 </header>
 
 <section class="hero" id="topo" style="padding-bottom:0">
   <div class="wrap hero-grid">
     <div class="hero-text">
-      <div class="where">Pré-candidato <span class="sep"></span> Capivari de Baixo · SC <span class="sep"></span> PL</div>
+      <div class="where"><span>Pré-candidato</span><i class="sep"></i><span>Capivari de Baixo · SC</span><i class="sep"></i><span class="pl">PL</span></div>
       <h1>Murilo <span>Machado</span></h1>
       <p class="slogan">Saúde sem fila. Escola digna.<br>Capivari para todos.</p>
       <p class="lead">Trabalhou na Câmara, viu de perto o que o povo enfrenta e decidiu que não dá mais para só assistir.</p>
