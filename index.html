@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Murilo Machado · Capivari de Baixo</title>
+<meta name="description" content="Murilo Machado, pré-candidato pelo PL em Capivari de Baixo (SC). Saúde sem fila, escola digna e inclusão das pessoas com deficiência.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#0a2c6e;
+  --blue-2:#06204f;
+  --blue-3:#123d8f;
+  --yellow:#ffd21f;
+  --green:#119a48;
+  --white:#fff;
+  --bg:#f4f6fa;
+  --text:#101a2e;
+  --muted:#56617a;
+  --line:#dbe1ec;
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--text);font:400 18px/1.6 Barlow,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:"Barlow Condensed",Barlow,sans-serif;text-transform:uppercase;line-height:.95;letter-spacing:.005em}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.kicker{display:inline-block;font:700 15px/1 Barlow;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 28px;border-radius:4px;font:700 17px/1 "Barlow Condensed";letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer;transition:background .2s ease,color .2s ease}
+.btn-yellow{background:var(--yellow);color:var(--blue-2)}
+.btn-yellow:hover{background:#ffe066}
+.btn-line{color:var(--white);box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}
+.btn-line:hover{box-shadow:inset 0 0 0 2px var(--white)}
+.btn-blue{background:var(--blue);color:var(--white)}
+.btn-blue:hover{background:var(--blue-3)}
+.flag{height:6px;background:linear-gradient(90deg,var(--green) 0 33.3%,var(--yellow) 33.3% 66.6%,var(--blue-3) 66.6%)}
+
+/* NAV */
+.nav{position:fixed;inset:0 0 auto;z-index:50;background:var(--blue-2);transition:box-shadow .3s}
+.nav.scrolled{box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--white)}
+.logo b{font:800 26px/1 "Barlow Condensed";text-transform:uppercase;letter-spacing:.01em}
+.pl{display:inline-grid;place-items:center;min-width:42px;height:30px;padding:0 8px;border-radius:3px;background:var(--yellow);color:var(--blue-2);font:900 18px/1 "Barlow Condensed"}
+.nav ul{display:flex;gap:30px;list-style:none}
+.nav ul a{color:rgba(255,255,255,.8);text-decoration:none;font:600 16px/1 "Barlow Condensed";letter-spacing:.1em;text-transform:uppercase}
+.nav ul a:hover{color:var(--yellow)}
+.nav .btn{padding:11px 18px;font-size:15px}
+.menu-btn{display:none;background:none;border:0;color:#fff;font-size:28px;cursor:pointer}
+
+/* HERO */
+.hero{position:relative;background:var(--blue);color:var(--white);padding-top:72px;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:
+  radial-gradient(900px 500px at 85% 20%,rgba(255,255,255,.10),transparent 60%),
+  linear-gradient(180deg,transparent 60%,rgba(6,32,79,.6));pointer-events:none}
+.hero-grid{position:relative;z-index:2}
+.hero-text{padding:110px 0 120px;max-width:600px}
+.where{display:flex;flex-wrap:wrap;align-items:center;gap:12px;font:700 16px/1 "Barlow Condensed";letter-spacing:.14em;text-transform:uppercase;color:var(--yellow);margin-bottom:22px}
+.where .sep{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.4)}
+.hero h1{font-size:clamp(64px,10vw,148px);font-weight:900;line-height:.86}
+.hero h1 span{display:block;color:var(--yellow)}
+.hero .slogan{margin:28px 0 12px;font:800 clamp(24px,2.6vw,34px)/1.1 "Barlow Condensed";text-transform:uppercase;letter-spacing:.02em}
+.hero p.lead{max-width:520px;color:rgba(255,255,255,.8);font-size:19px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.photo{position:absolute;z-index:1;top:72px;right:0;bottom:6px;width:min(50%,720px)}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 0%}
+.photo{-webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.25) 14%,rgba(0,0,0,.7) 30%,#000 48%);mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.25) 14%,rgba(0,0,0,.7) 30%,#000 48%)}
+.photo img{-webkit-mask-image:linear-gradient(0deg,transparent 0%,rgba(0,0,0,.6) 14%,#000 32%);mask-image:linear-gradient(0deg,transparent 0%,rgba(0,0,0,.6) 14%,#000 32%)}
+.photo::after{content:"";position:absolute;inset:0;background:rgba(10,44,110,.18);mix-blend-mode:multiply}
+
+/* SECTIONS */
+section{padding:110px 0}
+.head{max-width:780px;margin-bottom:56px}
+.head .kicker{margin-bottom:14px}
+.head h2{font-size:clamp(44px,6vw,76px);font-weight:900;color:var(--blue)}
+.head p{margin-top:18px;color:var(--muted);font-size:19px}
+
+/* FILA */
+.fila{background:var(--bg)}
+.fila-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.bignum{font:900 clamp(130px,17vw,220px)/.8 "Barlow Condensed";color:var(--blue)}
+.fila h2{font-size:clamp(34px,4vw,52px);color:var(--blue);margin:18px 0 18px;font-weight:800}
+.fila h2 em{font-style:normal;color:var(--green)}
+.fila p{color:var(--muted)}
+.dots{display:grid;grid-template-columns:repeat(40,1fr);gap:5px}
+.dots i{aspect-ratio:1;border-radius:50%;background:var(--blue);opacity:.12;transition:opacity .4s,background .4s}
+.dots i.on{opacity:1}
+.dots-legend{display:flex;justify-content:space-between;margin-top:14px;font-size:15px;color:var(--muted)}
+
+/* QUEM */
+.quem-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.quem-fig{margin-bottom:36px}
+.quem-photo{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 30%;border-bottom:6px solid var(--green)}
+.quem-fig figcaption{margin-top:10px;font-size:14px;color:var(--muted)}
+.quote{font:800 clamp(30px,3.4vw,44px)/1.08 "Barlow Condensed";color:var(--blue);border-left:6px solid var(--yellow);padding-left:28px}
+.quote-by{margin-top:20px;padding-left:34px;color:var(--muted);font-weight:600}
+.bio p{color:var(--muted);margin-bottom:18px}
+.bio p strong{color:var(--text)}
+.facts{list-style:none;margin-top:28px;border-top:1px solid var(--line)}
+.facts li{display:flex;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
+.facts li b{flex:none;width:130px;font:700 15px/1.3 "Barlow Condensed";letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
+.todo{display:inline-block;font:700 11px/1 Barlow;letter-spacing:.08em;text-transform:uppercase;background:#fff3c4;color:#8a6a00;padding:4px 7px;border-radius:3px;margin-left:6px;vertical-align:middle}
+
+/* BANDEIRAS */
+.bandeiras{background:var(--blue-2);color:var(--white)}
+.bandeiras .head h2{color:var(--white)}
+.bandeiras .head .kicker{color:var(--yellow)}
+.bandeiras .head p{color:rgba(255,255,255,.7)}
+.pillar{display:grid;grid-template-columns:120px 1fr 1fr;gap:40px;padding:46px 0;border-top:1px solid rgba(255,255,255,.15);align-items:start}
+.pillar:last-child{border-bottom:1px solid rgba(255,255,255,.15)}
+.pillar .n{font:900 96px/.8 "Barlow Condensed";color:var(--yellow)}
+.pillar h3{font-size:clamp(40px,4.4vw,58px);font-weight:900}
+.pillar .sub{margin-top:14px;color:rgba(255,255,255,.72)}
+.pillar .acts{display:grid;gap:14px;padding-top:6px}
+.pillar .acts p{position:relative;padding-left:22px;color:rgba(255,255,255,.9)}
+.pillar .acts p::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:3px;background:var(--yellow)}
+.note{margin-top:28px;font-size:15px;color:rgba(255,255,255,.5)}
+
+/* COMPROMISSO */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.step{border-top:5px solid var(--blue);padding-top:22px}
+.step:nth-child(2){border-color:var(--green)}
+.step:nth-child(3){border-color:var(--yellow)}
+.step h3{font-size:34px;color:var(--blue);margin-bottom:10px;font-weight:800}
+.step p{color:var(--muted);font-size:17px}
+
+/* PARTICIPE */
+.participe{background:var(--bg)}
+.part-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:start}
+.participe h2{font-size:clamp(48px,6vw,84px);font-weight:900;color:var(--blue)}
+.participe p.lead{font-size:19px;margin-top:20px;color:var(--muted);max-width:440px}
+form{background:var(--white);border-top:6px solid var(--yellow);padding:34px;box-shadow:0 20px 50px -30px rgba(10,44,110,.45);display:grid;gap:16px}
+label{display:grid;gap:7px;font-size:15px;font-weight:600}
+input,select,textarea{width:100%;font:400 16px Barlow;padding:14px 16px;border-radius:4px;border:1.5px solid var(--line);background:var(--white);color:var(--text);outline:none;transition:border-color .2s}
+input:focus,select:focus,textarea:focus{border-color:var(--blue)}
+textarea{min-height:110px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-ok{display:none;padding:14px 16px;border-radius:4px;background:#e4f5ea;color:#0d5a2c;font-weight:600}
+
+/* FOOTER */
+footer{background:var(--blue-2);color:rgba(255,255,255,.7);padding:60px 0 36px;font-size:16px}
+.foot{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:center}
+.foot .logo b{font-size:34px}
+.foot small{display:block;margin-top:8px;font:700 14px/1 "Barlow Condensed";letter-spacing:.14em;text-transform:uppercase;color:var(--yellow)}
+.social{display:flex;gap:12px}
+.social a{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);color:#fff;transition:background .2s}
+.social a:hover{background:var(--yellow);color:var(--blue-2)}
+.legal{margin-top:44px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);font-size:13px;color:rgba(255,255,255,.45);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+@media (max-width:960px){
+  .nav ul,.nav .btn{display:none}
+  .menu-btn{display:block}
+  .nav.open ul{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:0;background:var(--blue-2);padding:8px 24px 24px}
+  .nav.open ul a{display:block;padding:16px 0;font-size:20px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .hero{display:flex;flex-direction:column}
+  .hero-text{padding:40px 0 48px;max-width:none}
+  .hero .photo{position:relative;top:auto;bottom:auto;order:-1;width:100%;height:440px}
+  .hero .photo{-webkit-mask-image:none;mask-image:none}
+  .hero .photo img{-webkit-mask-image:linear-gradient(0deg,transparent 0%,rgba(0,0,0,.6) 18%,#000 45%);mask-image:linear-gradient(0deg,transparent 0%,rgba(0,0,0,.6) 18%,#000 45%)}
+  .hero .flag{order:3}
+  .fila-grid,.quem-grid,.part-grid{grid-template-columns:1fr;gap:44px}
+  .pillar{grid-template-columns:1fr;gap:16px}
+  .pillar .n{font-size:72px}
+  .steps{grid-template-columns:1fr 1fr;gap:30px 24px}
+  section{padding:80px 0}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  body{font-size:17px}
+  .hero h1{font-size:68px}
+  .logo b{font-size:22px}
+  .steps{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr}
+  form{padding:24px}
+  .dots{grid-template-columns:repeat(25,1fr);gap:4px}
+  .facts li{flex-direction:column;gap:4px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#topo" class="logo"><b>Murilo Machado</b><span class="pl">PL</span></a>
+    <ul>
+      <li><a href="#quem">Quem é</a></li>
+      <li><a href="#bandeiras">Bandeiras</a></li>
+      <li><a href="#compromisso">Compromisso</a></li>
+      <li><a href="#participe">Fale com o Murilo</a></li>
+    </ul>
+    <a href="#participe" class="btn btn-yellow">Apoie</a>
+    <button class="menu-btn" aria-label="Abrir menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="topo" style="padding-bottom:0">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <div class="where">Pré-candidato <span class="sep"></span> Capivari de Baixo · SC <span class="sep"></span> PL</div>
+      <h1>Murilo <span>Machado</span></h1>
+      <p class="slogan">Saúde sem fila. Escola digna.<br>Capivari para todos.</p>
+      <p class="lead">Trabalhou na Câmara, viu de perto o que o povo enfrenta e decidiu que não dá mais para só assistir.</p>
+      <div class="hero-ctas">
+        <a href="#bandeiras" class="btn btn-yellow">Conheça as bandeiras</a>
+        <a href="#participe" class="btn btn-line">Fale com o Murilo</a>
+      </div>
+    </div>
+  </div>
+  <div class="photo"><img src="murilo.jpg" alt="Murilo Machado sorrindo, de camisa preta"></div>
+  <div class="flag" style="position:relative;z-index:2"></div>
+</section>
+
+<section class="fila" id="fila">
+  <div class="wrap fila-grid">
+    <div class="rv">
+      <span class="kicker">A realidade</span>
+      <div class="bignum" style="margin-top:16px">800</div>
+      <h2>pessoas esperando<br><em>só pela fisioterapia.</em></h2>
+      <p>Foi o que Murilo encontrou quando trabalhava na Câmara: cerca de 800 pessoas na fila de um único atendimento. Por trás de cada número tem alguém com dor, sem poder trabalhar, esperando uma ligação que não chega.</p>
+    </div>
+    <div class="rv">
+      <div class="dots" id="dots" role="img" aria-label="Cada ponto representa uma pessoa na fila da fisioterapia"></div>
+      <div class="dots-legend"><span id="dots-unit">● cada ponto é uma pessoa</span><span id="dots-count">0 esperando</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="quem">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="kicker">Quem é Murilo</span>
+      <h2>Um jovem de Capivari que não aceita a fila como normal.</h2>
+    </div>
+    <div class="quem-grid">
+      <div class="rv">
+        <figure class="quem-fig">
+          <img class="quem-photo" src="murilo-2.jpg" alt="Murilo Machado segurando a ficha de filiação ao PL, ao lado de dois companheiros">
+          <figcaption>Ficha de filiação ao PL assinada: o começo oficial da caminhada.</figcaption>
+        </figure>
+        <p class="quote">"Eu trabalhei na Câmara e vi de perto. Tem muita fila de espera, poucos exames, escolas em situação precária."</p>
+        <p class="quote-by">— Murilo Machado</p>
+      </div>
+      <div class="bio rv">
+        <p>Murilo conhece a política por dentro. Na Câmara de Capivari de Baixo, viu como os pedidos da população chegam e como muitos ficam parados.</p>
+        <p>Agora quer usar essa experiência para <strong>cobrar, fiscalizar e propor</strong> soluções para o que mais pesa na vida das famílias: a saúde, a escola dos filhos e a inclusão das pessoas com deficiência.</p>
+        <ul class="facts">
+          <li><b>Cidade</b><span>Capivari de Baixo · SC</span></li>
+          <li><b>Partido</b><span>PL · Partido Liberal</span></li>
+          <li><b>Experiência</b><span>Trabalhou na Câmara Municipal</span></li>
+          <li><b>Formação</b><span>Estudante de Direito</span></li>
+          <li><b>Valores</b><span>Fé, família e respeito às pessoas</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bandeiras" id="bandeiras">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="kicker">Bandeiras</span>
+      <h2>As lutas do Murilo</h2>
+      <p>Três causas escolhidas por quem viu de perto onde a cidade mais falha com o seu povo.</p>
+    </div>
+    <div class="pillar rv">
+      <div class="n">01</div>
+      <div><h3>Saúde</h3><p class="sub">Filas enormes, poucos exames e postos de saúde que não dão conta. Quem precisa espera meses, às vezes anos.</p></div>
+      <div class="acts">
+        <p>Fila transparente: cada morador sabe sua posição e o tempo de espera.</p>
+        <p>Mutirões de exames e de fisioterapia para zerar as filas mais longas.</p>
+        <p>Fiscalização permanente dos postos de saúde do município.</p>
+      </div>
+    </div>
+    <div class="pillar rv">
+      <div class="n">02</div>
+      <div><h3>Educação</h3><p class="sub">Escolas em situação precária, sem estrutura para quem ensina e para quem aprende. Nossas crianças merecem mais.</p></div>
+      <div class="acts">
+        <p>Levantamento de cada escola: estrutura, merenda e segurança.</p>
+        <p>Prioridade de reforma para as unidades em pior estado.</p>
+        <p>Valorização de professores e funcionários da educação.</p>
+      </div>
+    </div>
+    <div class="pillar rv">
+      <div class="n">03</div>
+      <div><h3>Pessoas com deficiência</h3><p class="sub">Acesso de verdade na saúde, na escola, na rua e também na política. Inclusão não pode ficar só no discurso.</p></div>
+      <div class="acts">
+        <p>Atendimento prioritário que funcione na rede de saúde.</p>
+        <p>Calçadas, prédios públicos e transporte acessíveis.</p>
+        <p>Voz das pessoas com deficiência nas decisões da cidade.</p>
+      </div>
+    </div>
+    <p class="note">Propostas em construção, que serão aprofundadas ouvindo a população de Capivari de Baixo.</p>
+  </div>
+</section>
+
+<section id="compromisso">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="kicker">Compromisso</span>
+      <h2>Como Murilo quer fazer política</h2>
+    </div>
+    <div class="steps rv">
+      <div class="step"><h3>Ouvir</h3><p>Conversas nos bairros, nas escolas e nos postos de saúde de Capivari.</p></div>
+      <div class="step"><h3>Fiscalizar</h3><p>Cobrar com dados: quantos esperam, há quanto tempo e por quê.</p></div>
+      <div class="step"><h3>Propor</h3><p>Transformar cada problema em projeto concreto e possível.</p></div>
+      <div class="step"><h3>Prestar contas</h3><p>Mostrar publicamente cada passo dado.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="participe" id="participe">
+  <div class="wrap part-grid">
+    <div class="rv">
+      <span class="kicker">Fale com o Murilo</span>
+      <h2 style="margin-top:14px">Sua voz faz parte dessa luta</h2>
+      <p class="lead">Conte o que você enfrenta na saúde, na escola ou na acessibilidade do seu bairro. Sua história vai ajudar a construir as propostas para Capivari de Baixo.</p>
+    </div>
+    <form class="rv" onsubmit="event.preventDefault();this.querySelector('.form-ok').style.display='block';this.reset()">
+      <div class="row">
+        <label>Nome<input required placeholder="Seu nome"></label>
+        <label>WhatsApp<input type="tel" placeholder="(48) 00000-0000"></label>
+      </div>
+      <div class="row">
+        <label>Bairro<input placeholder="Onde você mora"></label>
+        <label>Assunto
+          <select><option>Saúde</option><option>Educação</option><option>Pessoas com deficiência</option><option>Quero ajudar como voluntário</option><option>Outro</option></select>
+        </label>
+      </div>
+      <label>Sua mensagem<textarea placeholder="Ex.: estou há 6 meses esperando um exame..."></textarea></label>
+      <button class="btn btn-blue" type="submit">Enviar mensagem</button>
+      <div class="form-ok">Obrigado! Sua mensagem foi registrada. (versão de demonstração)</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="flag" style="margin:-60px 0 54px"></div>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#topo" class="logo"><b>Murilo Machado</b><span class="pl">PL</span></a>
+        <small>Pré-candidato · Capivari de Baixo · SC</small>
+      </div>
+      <div class="social">
+        <a href="https://www.instagram.com/murilomchdoo/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="#participe" aria-label="WhatsApp"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 21l1.6-4.7A8.5 8.5 0 1112 20.5a8.4 8.4 0 01-4.2-1.1z"/></svg></a>
+      </div>
+    </div>
+    <div class="legal">
+      <span>Conteúdo de pré-campanha, sem pedido de voto, conforme art. 36-A da Lei nº 9.504/97.</span>
+      <span>© 2026 Murilo Machado</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20),{passive:true});
+document.querySelectorAll('.nav ul a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+const dots=document.getElementById('dots'),count=document.getElementById('dots-count');
+const N=innerWidth<560?400:800, m=800/N;
+dots.innerHTML='<i></i>'.repeat(N);
+if(m>1) document.getElementById('dots-unit').textContent='● cada ponto são 2 pessoas';
+const dio=new IntersectionObserver(([e])=>{
+  if(!e.isIntersecting)return; dio.disconnect();
+  const items=dots.children; let k=0;
+  const t=setInterval(()=>{ for(let j=0;j<8&&k<N;j++) items[k++].classList.add('on');
+    count.textContent=(k*m)+' esperando'; if(k>=N){clearInterval(t);count.textContent='~800 esperando'} },30);
+},{threshold:.4});
+dio.observe(dots);
+</script>
+</body>
+</html>
